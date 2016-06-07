@@ -1,0 +1,15 @@
+<div class="row">
+    <!--Travels-->
+    <div class="col s12 m6 l4">
+        <div class="collection">
+            <a class="collection-item avatar waves-effect waves-light" ng-repeat="travel in $ctrl.travels">
+                <i class="material-icons circle light-blue" style="margin-top: 10px">directions_car</i>
+                <div><i class="material-icons">access_time</i>  <span style="margin-top: -10px">{{travel.date}}</span></div>
+                <span class="title"><i class="material-icons">place</i>{{travel.distance}} kms</span>
+                <span class="secondary-content" style="margin-top: 8px"><h4 style="display: inline">{{travel.ecoScore}}</h4> /10</span>
+            </a>
+        </div>
+    </div>
+    
+    
+</div>
