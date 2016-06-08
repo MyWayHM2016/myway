@@ -1,8 +1,7 @@
 <div class="row" style="margin-bottom: 0px!important;">
     <!--Travels-->
     <div class="row" style="margin-bottom: 0px;!important;">
-        <h5 class="cyan-text text-darken-2 center-align" style="font-style: italic; font-weight: bold">Trajet
-            du {{$ctrl.currentTravel.date}}</h5>
+        <h5 class="cyan-text text-darken-2 center-align" style="font-style: italic; font-weight: bold">{{$ctrl.currentTravel.date}}</h5>
     </div>
     <div class="col s6 m6 l6">
         <div class="row" style="margin-bottom: 0px;!important;">
@@ -50,7 +49,7 @@
                 <a class="collection-item avatar waves-effect waves-light" ng-repeat="travel in $ctrl.travels"
                    ng-click="$ctrl.setCurrentTravel(travel)" ng-class="$ctrl.currentTravel == travel ? 'active' : ''">
                     <i class="material-icons circle light-blue" style="margin-top: 10px">directions_car</i>
-                    <div><i class="material-icons">access_time</i> <span
+                    <div><i class="material-icons">event_note</i> <span
                             style="margin-top: -10px">{{travel.date}}</span>
                     </div>
                     <span class="title"><i class="material-icons">place</i>{{travel.distance}} kms</span>

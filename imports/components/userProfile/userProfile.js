@@ -6,6 +6,7 @@ import template from './userProfile.html';
 class UserProfileCtrl {
     constructor() {
         this.userProfile = { pseudo: "Bob" };
+        $('.carousel').carousel();
     }
 }
 
