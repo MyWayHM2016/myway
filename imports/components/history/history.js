@@ -173,10 +173,10 @@ export default angular.module('history', [
 ]).component('history', {
     templateUrl: 'imports/components/history/history.html',
     controller: HistoryCtrl
-}).config(function(uiGmapGoogleMapApiProvider) {
+}).config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
         //    key: 'your api key',
         v: '3.20', //defaults to latest 3.X anyhow
         libraries: 'weather,geometry,visualization'
     });
-});
+}]);
