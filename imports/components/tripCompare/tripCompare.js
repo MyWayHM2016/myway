@@ -11,23 +11,23 @@ class TripCompareCtrl {
         this.community = [
             {
                 name : '',
-                avatar: '/av1.jpg'
+                avatar: '/avatar/avatar1.png'
             },
             {
                 name : '',
-                avatar: '/av2.jpg'
+                avatar: '/avatar/avatar2.png'
             },
             {
                 name : '',
-                avatar: '/av3.jpg'
+                avatar: '/avatar/avatar3.png'
             },
             {
                 name : '',
-                avatar: '/av4.jpg'
+                avatar: '/avatar/avatar4.png'
             },
             {
                 name : '',
-                avatar: '/av5.jpg'
+                avatar: '/avatar/avatar6.png'
             }
         ];
 
@@ -79,6 +79,14 @@ class TripCompareCtrl {
         ];
         $('select').material_select();
         $('.carousel').carousel();
+        this.selectOpponent = false;
+        this.selectedOpponent = {};
+    }
+
+    focusOpponent(opponentIndex) {
+        this.selectOpponent = true;
+        this.data = opponentIndex;
+        this.selectedOpponent = this.community[opponentIndex];
     }
 
 }

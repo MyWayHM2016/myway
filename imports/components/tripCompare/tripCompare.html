@@ -1,29 +1,42 @@
 <div class="row" style="margin-bottom: 0px!important;">
-    <!--compare Grid-->
-
-
-
 
     <div class="row" style="margin-bottom: 0px;!important;">
-        <h5 class="cyan-text text-darken-2 center-align" style="font-style: italic; font-weight: bold">Trajet
-            du lll</h5>
         <div class="row">
             <form class="col offset-s3 s6">
 
                 <div class="row">
                     <div class="carousel">
-                        <a class="carousel-item" href="#one!"><img src="/avatar/avatar1.jpg"></a>
-                        <a class="carousel-item" href="#one!"><img src="/avatar/av2.jpg"></a>
-                        <a class="carousel-item" href="#one!"><img src="/avatar/av3.jpg"></a>
-                        <a class="carousel-item" href="#one!"><img src="/avatar/av4.jpg"></a>
-                        <a class="carousel-item" href="#one!"><img src="/avatar/av5.jpg"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(0)"><img src="/avatar/avatar1.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(1)"><img src="/avatar/avatar2.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(2)"><img src="/avatar/avatar6.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(3)"><img src="/avatar/avatar4.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(4)"><img src="/avatar/avatar5.png"></a>
                     </div>
                 </div>
+
+
+                <div class="row" ng-if="!$ctrl.selectOpponent">
+                    TOTO
+                </div>
+                <div class="row" ng-if="$ctrl.selectOpponent">
+                    TATA - {{selectedOpponent}} / {{$ctrl.selectedOpponent}} * {{$ctrl.data}} + {{data}} ** $ctrl.data
+
+
+
+                </div>
+                <!--
+                <div class="row">
+                    <div class="carousel">
+                        <a ng-repeat="profil in $ctrl.community" href="#one!" class="carousel-item" ><img src={{profil.avatar}}></a>
+                    </div>
+                </div>
+-->
 
                 <!--
                 <a ng-repeat="profil in $ctrl.community" href="#one!" class="carousel-item" ><img src={{profil.avatar}}></a>
                 -->
 
+                <!--
                 <div class="row">
                     <div class="input-field col s12">
                         <select>
@@ -34,7 +47,7 @@
                         </select>
                     </div>
                 </div>
-
+-->
             </form>
         </div>
     </div>
