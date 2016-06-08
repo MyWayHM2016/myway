@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom: 0px!important;">
     <!--Travels-->
-    <div class="col s12 m12 l12">
+    <div class="col s6 m6 l6">
         <div class="row" style="margin-bottom: 0px;!important;">
             <h5 class="cyan-text text-darken-2 center-align" style="font-style: italic; font-weight: bold">Trajet
                 du {{$ctrl.currentTravel.date}}</h5>
@@ -13,7 +13,8 @@
                     <div><h4 style="display: inline">{{$ctrl.currentTravel.consommation}}</h4> / 10</div>
                     <div class="row" style="margin-bottom: 5px;!important;">
                         <span ng-repeat="s in $ctrl.currentTravel.ecoStarConso track by $index"
-                              class="material-icons col s1 m1 l1" ng-style="$ctrl.starColor($ctrl.currentTravel.consommation)">star_rate</span>
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.currentTravel.consommation)">star_rate</span>
                     </div>
                 </div>
             </div>
@@ -25,8 +26,9 @@
                         <div><h4 style="display: inline">{{$ctrl.currentTravel.safety}}</h4> / 10</div>
                         <div class="row" style="margin-bottom: 5px;!important;">
                         <span ng-repeat="s in $ctrl.currentTravel.ecoStarSafety track by $index"
-                              class="material-icons col s1 m1 l1" ng-style="$ctrl.starColor($ctrl.currentTravel.safety)">star_rate</span>
-                        </div> 
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.currentTravel.safety)">star_rate</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,7 +39,8 @@
                     <div><h4 style="display: inline">{{$ctrl.currentTravel.comfort}}</h4> / 10</div>
                     <div class="row" style="margin-bottom: 5px;!important;">
                         <span ng-repeat="s in $ctrl.currentTravel.ecoStarComfort track by $index"
-                              class="material-icons col s1 m1 l1" ng-style="$ctrl.starColor($ctrl.currentTravel.comfort)">star_rate</span>
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.currentTravel.comfort)">star_rate</span>
                     </div>
                 </div>
             </div>
@@ -59,31 +62,33 @@
     </div>
 
     <!--Map-->
-    <div class="row">
-        <div class="col s12 m12 l12">
-            <div class="card">
-                <div class="angular-google-map-container">
-                    <ui-gmap-google-map center="$ctrl.currentTravel.map.center" zoom="ctrl.currentTravel.map.zoom">
+    <!-- <div class="row"> -->
+    <div class="col s6 m6 l6">
+        <div class="card">
+            <div class="angular-google-map-container">
+                <ui-gmap-google-map center="$ctrl.currentTravel.map.center" zoom="$ctrl.currentTravel.map.zoom">
 
-                        <ui-gmap-polyline ng-repeat="p in $ctrl.currentTravel.polylines" path="p.path" stroke="p.stroke" visible='p.visible'
-                                          geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable">
+                    <ui-gmap-polyline ng-repeat="p in $ctrl.currentTravel.polylines" path="p.path" stroke="p.stroke"
+                                      visible='p.visible'
+                                      geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable">
 
-                        </ui-gmap-polyline>
-                    </ui-gmap-google-map>
-                </div>
+                    </ui-gmap-polyline>
+                </ui-gmap-google-map>
             </div>
         </div>
     </div>
-
-    <!--Create travel-->
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a class="btn-floating btn-large pink accent-3">
-            <i class="large material-icons">add</i>
-        </a>
-    </div>
-
-    <!-- Map MSolutions -->
-    <div class="row">
-        <div class="folium-map" id="map_49f552b469b0441093431b85e8684180" ></div>
-    </div>
 </div>
+
+<!--Create travel-->
+<div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large lime accent-3">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    </ul>
+</div>
+
+
