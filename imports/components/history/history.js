@@ -9,7 +9,13 @@ class HistoryCtrl {
     constructor() {
         this.travels = [
             {
-                date: "12/05/2016", distance: 50.6, ecoScore: 6.2, center: { latitude: 45.778570, longitude: 3.120654 }
+                date: "12/05/2016",
+                distance: 50.6,
+                ecoScore: 6.2,
+                center: { latitude: 45.778570, longitude: 3.120654 },
+                consommation: 2,
+                safety: 4,
+                comfort: 4
             },
             { date: "10/05/2016", distance: 204.8, ecoScore: 9 },
             { date: "09/05/2016", distance: 404, ecoScore: 8.4 },
@@ -18,7 +24,7 @@ class HistoryCtrl {
         ];
         this.currentTravel = this.travels[0];
     }
-    
+
     setCurrentTravel(travel) {
         this.currentTravel = travel;
     }
