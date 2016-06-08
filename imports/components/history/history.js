@@ -113,8 +113,8 @@ class HistoryCtrl {
                         visible: true,
                     }
                 ],
-                consommation: 1,
-                safety: 4,
+                consommation: 2,
+                safety: 6,
                 comfort: 4
             },
             {
