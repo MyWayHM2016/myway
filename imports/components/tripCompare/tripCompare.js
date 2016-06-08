@@ -11,25 +11,150 @@ class TripCompareCtrl {
         this.community = [
             {
                 name : '',
-                avatar: '/avatar/avatar1.png'
+                avatar: '/avatar/avatar1.png',
+                weeklyTripResults : {
+                    startDate : '30/05/2016',
+                    endDate : '05/06/2016',
+                    totalDistance : 12840,
+                    averageScore : 7.45,
+                    averageConsoScore : 5.4,
+                    averageSafetyScore : 7.1,
+                    averageConfortScore : 8.1,
+                    tripCount : 10,
+                    averageTripDistance : 284,
+                    shorterTrip : 5.6,
+                    longerTrip : 267,
+                    ecoStarConso : new Array(3),
+                    ecoStarSafety : new Array(3),
+                    ecoStarComfort : new Array(4),
+                    trips : []
+                }
             },
             {
                 name : '',
-                avatar: '/avatar/avatar2.png'
+                avatar: '/avatar/avatar2.png',
+                weeklyTripResults : {
+                    startDate : '30/05/2016',
+                    endDate : '05/06/2016',
+                    totalDistance : 22840,
+                    averageScore : 7.45,
+                    averageConsoScore : 5.4,
+                    averageSafetyScore : 7.1,
+                    averageConfortScore : 8.1,
+                    tripCount : 10,
+                    averageTripDistance : 284,
+                    shorterTrip : 5.6,
+                    longerTrip : 267,
+                    ecoStarConso : new Array(3),
+                    ecoStarSafety : new Array(3),
+                    ecoStarComfort : new Array(4),
+                    trips : []
+                }
             },
             {
                 name : '',
-                avatar: '/avatar/avatar3.png'
+                avatar: '/avatar/avatar6.png',
+                weeklyTripResults : {
+                    startDate : '30/05/2016',
+                    endDate : '05/06/2016',
+                    totalDistance : 32840,
+                    averageScore : 8.45,
+                    averageConsoScore : 5.4,
+                    averageSafetyScore : 7.1,
+                    averageConfortScore : 8.1,
+                    tripCount : 10,
+                    averageTripDistance : 284,
+                    shorterTrip : 5.6,
+                    longerTrip : 267,
+                    ecoStarConso : new Array(3),
+                    ecoStarSafety : new Array(3),
+                    ecoStarComfort : new Array(4),
+                    trips : []
+                }
             },
             {
                 name : '',
-                avatar: '/avatar/avatar4.png'
+                avatar: '/avatar/avatar4.png',
+                weeklyTripResults : {
+                    startDate : '30/05/2016',
+                    endDate : '05/06/2016',
+                    totalDistance : 42840,
+                    averageScore : 6.45,
+                    averageConsoScore : 5.4,
+                    averageSafetyScore : 7.1,
+                    averageConfortScore : 8.1,
+                    tripCount : 10,
+                    averageTripDistance : 284,
+                    shorterTrip : 5.6,
+                    longerTrip : 267,
+                    ecoStarConso : new Array(3),
+                    ecoStarSafety : new Array(3),
+                    ecoStarComfort : new Array(4),
+                    trips : []
+                }
             },
             {
                 name : '',
-                avatar: '/avatar/avatar6.png'
+                avatar: '/avatar/avatar6.png',
+                weeklyTripResults : {
+                    startDate : '30/05/2016',
+                    endDate : '05/06/2016',
+                    totalDistance : 62840,
+                    averageScore : 5.45,
+                    averageConsoScore : 5.4,
+                    averageSafetyScore : 7.1,
+                    averageConfortScore : 8.1,
+                    tripCount : 10,
+                    averageTripDistance : 284,
+                    shorterTrip : 5.6,
+                    longerTrip : 267,
+                    ecoStarConso : new Array(3),
+                    ecoStarSafety : new Array(3),
+                    ecoStarComfort : new Array(4),
+                    trips : []
+                }
             }
         ];
+
+        this.userCompetitionResults = {
+            avatar: '/avatar/avatar3.png',
+            weeklyTripResults : {
+                startDate : '30/05/2016',
+                endDate : '05/06/2016',
+                totalDistance : 5440,
+                averageScore : 7.45,
+                averageConsoScore : 7.4,
+                averageSafetyScore : 6.7,
+                averageConfortScore : 8.1,
+                tripCount : 34,
+                averageTripDistance : 160,
+                shorterTrip : 5.6,
+                longerTrip : 267,
+                ecoStarConso : new Array(3),
+                ecoStarSafety : new Array(3),
+                ecoStarComfort : new Array(4),
+                trips : []
+            }
+            /*,
+            monthlyTripResults : {
+                startDate : '30/05/2016',
+                endDate : '05/06/2016',
+                totalDistance : 5440,
+                averageScore : 7.45,
+                averageConsoScore : 7.4,
+                averageSafetyScore : 6.7,
+                averageConfortScore : 8.1,
+                tripCount : 34,
+                averageTripDistance : 160,
+                shorterTrip : 5.6,
+                longerTrip : 267,
+                ecoStarConso : 3,
+                ecoStarSafety : 3,
+                ecoStarComfort : 4,
+                trips : []
+            }*/
+        };
+
 
         this.challengesList = [
             {
@@ -81,12 +206,35 @@ class TripCompareCtrl {
         $('.carousel').carousel();
         this.selectOpponent = false;
         this.selectedOpponent = {};
+        this.userWinner = false;
+        this.opponentWinner = false;
+
     }
 
-    focusOpponent(opponentIndex) {
+    focusOpponent(opponentIndex, userResult) {
         this.selectOpponent = true;
         this.data = opponentIndex;
         this.selectedOpponent = this.community[opponentIndex];
+        if (this.selectedOpponent.weeklyTripResults.averageScore > userResult){
+            this.opponentWinner = true;
+            this.userWinner = false;
+        }
+        else{
+            this.userWinner = true;
+            this.opponentWinner = false;
+        }
+    }
+
+    starColor(ecoScore) {
+        var color;
+        if (ecoScore < 4) {
+            color = 'red';
+        } else if (ecoScore < 7) {
+            color = 'orange';
+        } else {
+            color = 'green';
+        }
+        return {color: color};
     }
 
 }

@@ -2,53 +2,183 @@
 
     <div class="row" style="margin-bottom: 0px;!important;">
         <div class="row">
-            <form class="col offset-s3 s6">
 
-                <div class="row">
+                <div class="row col offset-s2 s8">
                     <div class="carousel">
-                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(0)"><img src="/avatar/avatar1.png"></a>
-                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(1)"><img src="/avatar/avatar2.png"></a>
-                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(2)"><img src="/avatar/avatar6.png"></a>
-                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(3)"><img src="/avatar/avatar4.png"></a>
-                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(4)"><img src="/avatar/avatar5.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(0, $ctrl.userCompetitionResults.weeklyTripResults.averageScore)"><img src="/avatar/avatar1.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(1, $ctrl.userCompetitionResults.weeklyTripResults.averageScore)"><img src="/avatar/avatar2.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(2, $ctrl.userCompetitionResults.weeklyTripResults.averageScore)"><img src="/avatar/avatar6.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(3, $ctrl.userCompetitionResults.weeklyTripResults.averageScore)"><img src="/avatar/avatar4.png"></a>
+                        <a class="carousel-item" ng-click="$ctrl.focusOpponent(4, $ctrl.userCompetitionResults.weeklyTripResults.averageScore)"><img src="/avatar/avatar5.png"></a>
                     </div>
                 </div>
 
-
-                <div class="row" ng-if="!$ctrl.selectOpponent">
-                    TOTO
-                </div>
                 <div class="row" ng-if="$ctrl.selectOpponent">
-                    TATA - {{selectedOpponent}} / {{$ctrl.selectedOpponent}} * {{$ctrl.data}} + {{data}} ** $ctrl.data
-
-
-
-                </div>
-                <!--
-                <div class="row">
-                    <div class="carousel">
-                        <a ng-repeat="profil in $ctrl.community" href="#one!" class="carousel-item" ><img src={{profil.avatar}}></a>
+                    <div class="col offset-s1 offset-m1 offset-l1 s10 m10 l10 ">
+                        <div class="center-align">
+                            <h3>
+                                <p>Comparaison des trajets</p>
+                                <p> entre le 30/05/2016 et le 05/06/2016</p>
+                            </h3>
+                        </div>
                     </div>
-                </div>
--->
+                    <div class="col offset-s1 offset-m1 offset-l1 s5 m5 l5 separator">
+                        <div class="row" style="margin-bottom: 0px;!important;">
+                            <div class="card">
+                                <div class="col card-image offset-s4 offset-m4 offset-l4 s4 m4 l4">
+                                    <img src={{$ctrl.userCompetitionResults.avatar}}>
+                                </div>
+                                <div ng-if="$ctrl.userWinner" class="col card-image s3 m3 l3 center-align">
+                                    <img src="/BIBwinner.png">
+                                    <h5>Félicitations</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 0px;!important;">
 
-                <!--
-                <a ng-repeat="profil in $ctrl.community" href="#one!" class="carousel-item" ><img src={{profil.avatar}}></a>
-                -->
+                            <div class="card col s4 m4 l4">
+                                <div class="card-content center-align">
+                                    <div class="material-icons light-blue-text" style="font-size: 800%">local_gas_station</div>
+                                    <div>Consommation</div>
+                                    <div><h4 style="display: inline">{{$ctrl.userCompetitionResults.weeklyTripResults.averageConsoScore}}</h4> / 10</div>
+                                    <div class="row" style="margin-bottom: 5px;!important;">
+                                        <span ng-repeat="s in $ctrl.userCompetitionResults.weeklyTripResults.ecoStarConso track by $index"
+                                              class="material-icons col s1 m1 l1"
+                                              ng-style="$ctrl.starColor($ctrl.userCompetitionResults.weeklyTripResults.averageConsoScore)">star_rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4 m4 l4" style="padding: 0 10px 0 10px;">
+                                <div class="card ">
+                                    <div class="card-content center-align">
+                                        <div class="material-icons light-blue-text" style="font-size: 800%">rowing</div>
+                                        <div>Sécurité</div>
+                                        <div><h4 style="display: inline">{{$ctrl.userCompetitionResults.weeklyTripResults.averageSafetyScore}}</h4> / 10</div>
+                                        <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.userCompetitionResults.weeklyTripResults.ecoStarSafety track by $index"
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.userCompetitionResults.weeklyTripResults.averageSafetyScore)">star_rate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card col s4 m4 l4">
+                                <div class="card-content center-align">
+                                    <div class="material-icons light-blue-text" style="font-size: 800%">airline_seat_recline_extra</div>
+                                    <div>Confort</div>
+                                    <div><h4 style="display: inline">{{$ctrl.userCompetitionResults.weeklyTripResults.averageConfortScore}}</h4> / 10</div>
+                                    <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.userCompetitionResults.weeklyTripResults.ecoStarComfort track by $index"
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.userCompetitionResults.weeklyTripResults.averageConfortScore)">star_rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!--
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
+                        <div class="row" style="margin-bottom: 0px;!important;">
+                            <div class="card">
+                                <span class="cyan-text text-darken-2 card-title" style="margin-left: 30%">Chiffres clés du comparatif</span>
+                                <div>
+                                    <ul class="collection">
+                                        <li class="collection-item avatar">
+                                            <i class="cyan darken-2 large material-icons circle">info_outline</i>
+                                            <p><b>Distance totale : </b>{{$ctrl.userCompetitionResults.weeklyTripResults.totalDistance}}</p>
+                                            <p><b>Nombre de trajets : </b>{{$ctrl.userCompetitionResults.weeklyTripResults.tripCount}}</p>
+                                            <p><b>Distance moyenne : </b>{{$ctrl.userCompetitionResults.weeklyTripResults.averageTripDistance}}</p>
+                                            <p><b>Plus long trajet : </b>{{$ctrl.userCompetitionResults.weeklyTripResults.shorterTrip}}</p>
+                                            <p><b>Plus petit trajet : </b>{{$ctrl.userCompetitionResults.weeklyTripResults.longerTrip}}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--
+                        <div class="row" style="margin-bottom: 0px;!important;">
+                            <div class="card">
+                                {{$ctrl.userCompetitionResults.weeklyTripResults}}
+                            </div>
+                        </div>-->
                     </div>
+                    <div class="col s5 m5 l5">
+                        <div class="row" style="margin-bottom: 0px;!important;">
+                            <div class="card">
+                                <div class="col card-image offset-s4 offset-m4 offset-l4 s4 m4 l4">
+                                    <img src={{$ctrl.selectedOpponent.avatar}}>
+                                </div>
+                                <div ng-if="$ctrl.opponentWinner" class="col card-image s3 m3 l3 center-align">
+                                    <img src="/BIBwinner.png">
+                                    <h5>Dommage</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 0px;!important;">
+
+                            <div class="card col s4 m4 l4">
+                                <div class="card-content center-align">
+                                    <div class="material-icons light-blue-text" style="font-size: 800%">local_gas_station</div>
+                                    <div>Consommation</div>
+                                    <div><h4 style="display: inline">{{$ctrl.selectedOpponent.weeklyTripResults.averageConsoScore}}</h4> / 10</div>
+                                    <div class="row" style="margin-bottom: 5px;!important;">
+                                        <span ng-repeat="s in $ctrl.selectedOpponent.weeklyTripResults.ecoStarConso track by $index"
+                                              class="material-icons col s1 m1 l1"
+                                              ng-style="$ctrl.starColor($ctrl.selectedOpponent.weeklyTripResults.averageConsoScore)">star_rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4 m4 l4" style="padding: 0 10px 0 10px;">
+                                <div class="card ">
+                                    <div class="card-content center-align">
+                                        <div class="material-icons light-blue-text" style="font-size: 800%">rowing</div>
+                                        <div>Sécurité</div>
+                                        <div><h4 style="display: inline">{{$ctrl.selectedOpponent.weeklyTripResults.averageSafetyScore}}</h4> / 10</div>
+                                        <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.selectedOpponent.weeklyTripResults.ecoStarSafety track by $index"
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.selectedOpponent.weeklyTripResults.averageSafetyScore)">star_rate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card col s4 m4 l4">
+                                <div class="card-content center-align">
+                                    <div class="material-icons light-blue-text" style="font-size: 800%">airline_seat_recline_extra</div>
+                                    <div>Confort</div>
+                                    <div><h4 style="display: inline">{{$ctrl.selectedOpponent.weeklyTripResults.averageConfortScore}}</h4> / 10</div>
+                                    <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.selectedOpponent.weeklyTripResults.ecoStarComfort track by $index"
+                              class="material-icons col s1 m1 l1"
+                              ng-style="$ctrl.starColor($ctrl.selectedOpponent.weeklyTripResults.averageConfortScore)">star_rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 0px;!important;">
+                            <div class="card">
+                                <span class="cyan-text text-darken-2 card-title" style="margin-left: 30%">Chiffres clés du comparatif</span>
+                                <div>
+                                    <ul class="collection">
+                                        <li class="collection-item avatar">
+                                            <i class="cyan darken-2 large material-icons circle">info_outline</i>
+                                            <p><b>Distance totale : </b>{{$ctrl.selectedOpponent.weeklyTripResults.totalDistance}}</p>
+                                            <p><b>Nombre de trajets : </b>{{$ctrl.selectedOpponent.weeklyTripResults.tripCount}}</p>
+                                            <p><b>Distance moyenne : </b>{{$ctrl.selectedOpponent.weeklyTripResults.averageTripDistance}}</p>
+                                            <p><b>Plus long trajet : </b>{{$ctrl.selectedOpponent.weeklyTripResults.shorterTrip}}</p>
+                                            <p><b>Plus petit trajet : </b>{{$ctrl.selectedOpponent.weeklyTripResults.longerTrip}}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
--->
-            </form>
+
         </div>
     </div>
 
