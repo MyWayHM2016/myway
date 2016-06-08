@@ -18,6 +18,10 @@ class HistoryCtrl {
         ];
         this.currentTravel = this.travels[0];
     }
+    
+    setCurrentTravel(travel) {
+        this.currentTravel = travel;
+    }
 }
 
 export default angular.module('history', [

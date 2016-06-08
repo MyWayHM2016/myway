@@ -1,22 +1,38 @@
-<div class="row">
+<div class="row" style="margin-bottom: 0px!important;">
     <!--Travels-->
     <div class="col s12 m6 l4">
-        <div class="collection">
-            <a class="collection-item avatar waves-effect waves-light" ng-repeat="travel in $ctrl.travels">
-                <i class="material-icons circle light-blue" style="margin-top: 10px">directions_car</i>
-                <div><i class="material-icons">access_time</i> <span style="margin-top: -10px">{{travel.date}}</span>
-                </div>
-                <span class="title"><i class="material-icons">place</i>{{travel.distance}} kms</span>
+        <!--<div class="card">-->
+            <div class="collection" style="margin: 0 0 0 0">
+                <a class="collection-item avatar waves-effect waves-light" ng-repeat="travel in $ctrl.travels" ng-click="$ctrl.setCurrentTravel(travel)">
+                    <i class="material-icons circle light-blue" style="margin-top: 10px">directions_car</i>
+                    <div><i class="material-icons">access_time</i> <span
+                            style="margin-top: -10px">{{travel.date}}</span>
+                    </div>
+                    <span class="title"><i class="material-icons">place</i>{{travel.distance}} kms</span>
                 <span class="secondary-content" style="margin-top: 8px"><h4
                         style="display: inline">{{travel.ecoScore}}</h4> /10</span>
-            </a>
+                </a>
+            </div>
+        <!--</div>-->
+    </div>
+
+    <!--Travel details-->
+    <div class="col s12 m6 l8">
+        <div class="card">
+            <div class="card-content">
+                {{$ctrl.currentTravel.date}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!--Map-->
+    <div class="col s12 m12 l12">
+        <div class="card">
+            <div class="angular-google-map-container">
+                <ui-gmap-google-map center="$ctrl.currentTravel.center"></ui-gmap-google-map>
+            </div>
         </div>
     </div>
 
-    <!--Map-->
-    <div class="col s12 m6 l8">
-        <div class="angular-google-map-container">
-            <ui-gmap-google-map center="$ctrl.currentTravel.center"></ui-gmap-google-map>
-        </div>
-    </div>
 </div>
