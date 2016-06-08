@@ -51,7 +51,13 @@
         <div class="col s12 m12 l12">
             <div class="card">
                 <div class="angular-google-map-container">
-                    <ui-gmap-google-map center="$ctrl.currentTravel.center"></ui-gmap-google-map>
+                    <ui-gmap-google-map center="$ctrl.currentTravel.map.center" zoom="ctrl.currentTravel.map.zoom">
+
+                        <ui-gmap-polyline ng-repeat="p in $ctrl.currentTravel.polylines" path="p.path" stroke="p.stroke" visible='p.visible'
+                                          geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable">
+
+                        </ui-gmap-polyline>
+                    </ui-gmap-google-map>
                 </div>
             </div>
         </div>
@@ -62,5 +68,10 @@
         <a class="btn-floating btn-large lime accent-3">
             <i class="large material-icons">add</i>
         </a>
+    </div>
+
+    <!-- Map MSolutions -->
+    <div class="row">
+        <div class="folium-map" id="map_49f552b469b0441093431b85e8684180" ></div>
     </div>
 </div>
