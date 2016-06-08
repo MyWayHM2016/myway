@@ -40,7 +40,7 @@ class HistoryCtrl {
             },
             {
                 date: "10/05/2016", distance: 204.8, ecoScore: 9,
-                badges: [{src: '/badge-bon-conducteur.jpg'}],
+                badges: [{src: '/badges/bestdriver-16.png'}],
                 map : {
                     center:{latitude:51.4674759901,longitude:6.9000285094},
                     zoom:9
