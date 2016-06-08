@@ -106,7 +106,7 @@ class HistoryCtrl {
                 map : {
                     center: { latitude: 45.778570, longitude: 3.120654 }
                 },
-                consommation: 1,
+                consommation: 2,
                 safety: 4,
                 comfort: 4
             },
@@ -120,11 +120,26 @@ class HistoryCtrl {
                 comfort: 7
             }
         ];
-        this.currentTravel = this.travels[0];
+        this.setCurrentTravel(this.travels[0]);
     }
 
     setCurrentTravel(travel) {
         this.currentTravel = travel;
+        this.currentTravel.ecoStarConso = new Array(Math.floor(this.currentTravel.consommation / 2));
+        this.currentTravel.ecoStarSafety = new Array(Math.floor(this.currentTravel.safety / 2));
+        this.currentTravel.ecoStarComfort = new Array(Math.floor(this.currentTravel.comfort / 2));
+    }
+    
+    starColor(ecoScore) {
+        var color;
+        if (ecoScore < 4) {
+            color = 'red';
+        } else if (ecoScore < 7) {
+            color = 'orange';
+        } else {
+            color = 'green';
+        }
+        return {color: color};
     }
 }
 

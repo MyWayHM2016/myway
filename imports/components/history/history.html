@@ -11,6 +11,10 @@
                     <div class="material-icons light-blue-text" style="font-size: 800%">local_gas_station</div>
                     <div>Consommation</div>
                     <div><h4 style="display: inline">{{$ctrl.currentTravel.consommation}}</h4> / 10</div>
+                    <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.currentTravel.ecoStarConso track by $index"
+                              class="material-icons col s1 m1 l1" ng-style="$ctrl.starColor($ctrl.currentTravel.consommation)">star_rate</span>
+                    </div>
                 </div>
             </div>
             <div class="col s4 m4 l4" style="padding: 0 10px 0 10px;">
@@ -19,6 +23,10 @@
                         <div class="material-icons light-blue-text" style="font-size: 800%">rowing</div>
                         <div>Sécurité</div>
                         <div><h4 style="display: inline">{{$ctrl.currentTravel.safety}}</h4> / 10</div>
+                        <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.currentTravel.ecoStarSafety track by $index"
+                              class="material-icons col s1 m1 l1" ng-style="$ctrl.starColor($ctrl.currentTravel.safety)">star_rate</span>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -27,6 +35,10 @@
                     <div class="material-icons light-blue-text" style="font-size: 800%">airline_seat_recline_extra</div>
                     <div>Confort</div>
                     <div><h4 style="display: inline">{{$ctrl.currentTravel.comfort}}</h4> / 10</div>
+                    <div class="row" style="margin-bottom: 5px;!important;">
+                        <span ng-repeat="s in $ctrl.currentTravel.ecoStarComfort track by $index"
+                              class="material-icons col s1 m1 l1" ng-style="$ctrl.starColor($ctrl.currentTravel.comfort)">star_rate</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -39,8 +51,8 @@
                             style="margin-top: -10px">{{travel.date}}</span>
                     </div>
                     <span class="title"><i class="material-icons">place</i>{{travel.distance}} kms</span>
-                <span class="secondary-content" style="margin-top: 8px"><h4
-                        style="display: inline">{{travel.ecoScore}}</h4> /10</span>
+                    <span class="secondary-content" style="margin-top: 8px"><h4
+                            style="display: inline">{{travel.ecoScore}}</h4> /10</span>
                 </a>
             </div>
         </div>
@@ -65,7 +77,7 @@
 
     <!--Create travel-->
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a class="btn-floating btn-large lime accent-3">
+        <a class="btn-floating btn-large pink accent-3">
             <i class="large material-icons">add</i>
         </a>
     </div>
