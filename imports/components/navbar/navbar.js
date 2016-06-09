@@ -11,6 +11,9 @@ class NavbarCtrl {
         this.showHistory = true;
         this.showProfile = false;
         this.showTripCompare = false;
+
+        //$('#modal1').leanModal();
+
     }
     
     toggleUserProfile() {
@@ -29,6 +32,14 @@ class NavbarCtrl {
         this.showTripCompare = true;
         this.showHistory = false;
         this.showProfile = false;
+    }
+
+    openModal() {
+        $('#modal1').openModal();
+    }
+
+    closeModal() {
+        $('#modal1').closeModal();
     }
 
 }

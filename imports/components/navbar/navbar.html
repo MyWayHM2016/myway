@@ -17,7 +17,84 @@
     </a>
     <ul>
         <li><a class="btn-floating btn-large red" ng-click="$ctrl.toggleTripCompare()"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating btn-large yellow darken-1"><i class="material-icons">add_to_queue</i></a></li>
+        <li><a class="btn-floating btn-large yellow darken-1" ng-click="$ctrl.openModal()"><i class="material-icons">question_answer</i></a></li>
         <li><a class="btn-floating btn-large green" ng-click="$ctrl.toggleHistory()"><i class="material-icons">publish</i></a></li>
     </ul>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Mes discussions</h4>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">label</i>Mauvaise indication App Resto</div>
+                <div class="collapsible-body col offset-s2 offset-m2 offset-l2">
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <div class="chip">
+                                <img src="/avatar/avatar3.png" alt="Contact Person">
+                                Dominique Clayton
+                            </div>
+                            <span>Bonjour, je viens d'essayer de me rendre au restaurant la Truffe Argenté et il est fermé !!!</span>
+                        </li>
+                        <li class="collection-item avatar">
+                            <div class="chip">
+                                <img src="/badges/bibbadgesV-29.png" alt="Contact Person">
+                                Community Manager Michelin
+                            </div>
+                            <span class="title">Bonjour, désolé de ce désagrément. Merci de votre retour nous allons le prendre en compte et mettre à jour nos cartes. Encore merci.</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">label</i>Euromaster - RDV réunion</div>
+                <div class="collapsible-body col offset-s2 offset-m2 offset-l2">
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <div class="chip">
+                                <img src="/avatar/avatar3.png" alt="Contact Person">
+                                Dominique Clayton
+                            </div>
+                            <span>Bla bla bla bla</span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">label</i>Voyage Italie - Réservation Hôtel</div>
+                <div class="collapsible-body col offset-s2 offset-m2 offset-l2">
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <div class="chip">
+                                <img src="/avatar/avatar3.png" alt="Contact Person">
+                                Dominique Clayton
+                            </div>
+                            <span>Bonjour, j'ai une demande à vous concernant mon voyage à Londres dans deux semaines (réservation #156646231), il nous faudrait un lit parapluie pour un enfant de moins de deux ans.</span>
+                        </li>
+                        <li class="collection-item avatar">
+                            <div class="chip">
+                                <img src="/badges/bibbadgesV-30.png" alt="Contact Person">
+                                Community Manager Michelin
+                            </div>
+                            <span class="title">Bonjour Monsieur Clayton, pas de soucis, nous vous mettrons ça à disposition le jour de votre arrivée.
+                            Au plaisir de vous recevoir dans notre établissement</span>
+                        </li>
+                        <li class="collection-item avatar">
+                            <div class="chip">
+                                <img src="/avatar/avatar3.png" alt="Contact Person">
+                                Dominique Clayton
+                            </div>
+                            <span>Merci beaucoup, à dans deux semaines</span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a class="btn-floating btn-large yellow darken-1" ng-click="$ctrl.closeModal()"><i class="material-icons">add_to_queue</i></a>
+    </div>
 </div>
