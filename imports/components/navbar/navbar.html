@@ -1,9 +1,14 @@
-<nav class="row light-blue">
-    <div class="nav-wrapper col s12">
-        <a href="#" class="brand-logo" ng-click="$ctrl.toggleHistory()">My Eco Way</a>
-        <ul id="nav-mobile" class="right">
-            <li><a ng-click="$ctrl.toggleUserProfile()"><span class="material-icons" style="margin-top: 20px">person</span></a></li>
-        </ul>
+<nav class="row">
+    <div class="navbar-fixed light-blue">
+        <nav>
+            <div class="nav-wrap light-blue col s12">
+                <a href="#" class="brand-logo" ng-click="$ctrl.toggleHistory()">My Eco Way</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a ng-click="$ctrl.toggleUserProfile()"><span class="material-icons" style="margin-top: 20px">person</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 </nav>
 <history ng-if="$ctrl.showHistory"></history>
@@ -16,9 +21,12 @@
         <i class="large material-icons">add</i>
     </a>
     <ul>
-        <li><a class="btn-floating btn-large red" ng-click="$ctrl.toggleTripCompare()"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating btn-large yellow darken-1" ng-click="$ctrl.openModal()"><i class="material-icons">question_answer</i></a></li>
-        <li><a class="btn-floating btn-large green" ng-click="$ctrl.toggleHistory()"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating btn-large red" ng-click="$ctrl.toggleTripCompare()"><i class="material-icons">insert_chart</i></a>
+        </li>
+        <li><a class="btn-floating btn-large yellow darken-1" ng-click="$ctrl.openModal()"><i class="material-icons">question_answer</i></a>
+        </li>
+        <li><a class="btn-floating btn-large green" ng-click="$ctrl.toggleHistory()"><i
+                class="material-icons">publish</i></a></li>
     </ul>
 </div>
 
@@ -64,7 +72,8 @@
                 </div>
             </li>
             <li>
-                <div class="collapsible-header"><i class="material-icons">label</i>Voyage Italie - Réservation Hôtel</div>
+                <div class="collapsible-header"><i class="material-icons">label</i>Voyage Italie - Réservation Hôtel
+                </div>
                 <div class="collapsible-body col offset-s2 offset-m2 offset-l2">
                     <ul class="collection">
                         <li class="collection-item avatar">
