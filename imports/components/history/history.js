@@ -9,7 +9,7 @@ class HistoryCtrl {
     constructor() {
         this.travels = [
             {
-                date: "ISSYNGEAUX - TOULOUSE",
+                date: "ISSYNGEAUX - TOULOUSE (21/05/2016)",
                 distance: 372,
                 ecoScore: 8.2,
                 perso : true,
@@ -17,6 +17,7 @@ class HistoryCtrl {
                     center:{latitude:44.517411,longitude:3.020660},
                     zoom: 8,
                 },
+                badges: [{src: '/badges/bestdriver-16.png'}],
                 polylines : [
                     {
                         id: 1,
@@ -45,10 +46,10 @@ class HistoryCtrl {
                 ],
                 consommation: 7,
                 safety: 9,
-                comfort: 6
+                comfort: 8
             },
             {
-                date: "01/05/2016",
+                date: "SHWERTE - DORTMUND (15/05/2016)",
                 distance: 143.970,
                 ecoScore: 6.2,
                 map : {
@@ -78,8 +79,7 @@ class HistoryCtrl {
                 comfort: 4
             },
             {
-                date: "10/05/2016", distance: 204.8, ecoScore: 9,
-                badges: [{src: '/badges/bestdriver-16.png'}],
+                date: "KREFELD - DORTMUND (10/05/2016)", distance: 204.8, ecoScore: 9,
                 map : {
                     center:{latitude:51.4674759901,longitude:6.9000285094},
                     zoom:9
@@ -105,7 +105,7 @@ class HistoryCtrl {
                 comfort: 7
             },
             {
-                date: "09/05/2016", distance: 404, ecoScore: 8.4,
+                date: "BONN - BERGISH (09/05/2016)", distance: 404, ecoScore: 8.4,
                 map : {
                     center: {latitude:50.9078249716,longitude:7.1435461612},
                     zoom:10
@@ -131,7 +131,7 @@ class HistoryCtrl {
                 comfort: 5
             },
             {
-                date: "08/05/2016", distance: 12.3, ecoScore: 4.6,
+                date: "COLOGNE - LEVERKUSEN (08/05/2016)", distance: 12.3, ecoScore: 4.6,
                 map : {
                     center: {latitude:51.0180689028,longitude:6.9772517847},
                     zoom:9
@@ -157,7 +157,7 @@ class HistoryCtrl {
                 comfort: 4
             },
             {
-                date: "24/04/2016", distance: 25.6, ecoScore: 6,
+                date: "AUGUSTDORF - DORTMUND (24/04/2016)", distance: 25.6, ecoScore: 6,
                 map : {
                     center: {latitude:51.6493652879,longitude:8.2733124015},
                     zoom:9,
