@@ -48,7 +48,7 @@
             <div class="collection" style="margin: 0 0 0 0">
                 <a class="collection-item avatar waves-effect waves-light" ng-repeat="travel in $ctrl.travels"
                    ng-click="$ctrl.setCurrentTravel(travel)" ng-class="$ctrl.currentTravel == travel ? 'active' : ''">
-                    <i class="material-icons circle light-blue" style="margin-top: 10px">directions_car</i>
+                    <i class="material-icons circle light-blue" style="margin-top: 10px">{{travel.perso ? 'nature_people' : 'work'}}</i>
                     <div><i class="material-icons">event_note</i> <span
                             style="margin-top: -10px">{{travel.date}}</span>
                     </div>
