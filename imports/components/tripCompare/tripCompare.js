@@ -95,7 +95,7 @@ class TripCompareCtrl {
             },
             {
                 name : '',
-                avatar: '/avatar/avatar6.png',
+                avatar: '/avatar/avatar5.png',
                 weeklyTripResults : {
                     startDate : '30/05/2016',
                     endDate : '05/06/2016',

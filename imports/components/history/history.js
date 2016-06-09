@@ -15,7 +15,7 @@ class HistoryCtrl {
                 perso : true,
                 map : {
                     center:{latitude:44.517411,longitude:3.020660},
-                    zoom: 12,
+                    zoom: 8,
                 },
                 polylines : [
                     {
