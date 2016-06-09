@@ -12,6 +12,7 @@ class HistoryCtrl {
                 date: "ISSYNGEAUX - TOULOUSE",
                 distance: 143.970,
                 ecoScore: 6.2,
+                perso : true,
                 map : {
                     center:{latitude:51.4790474285,longitude:7.4614436936},
                     zoom: 12,

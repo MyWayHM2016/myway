@@ -8,12 +8,9 @@ import template from './navbar.html';
 
 class NavbarCtrl {
     constructor() {
-        /*this.showHistory = true;
+        this.showHistory = true;
         this.showProfile = false;
-        this.showTripCompare = false;*/
-        this.showHistory = false;
-        this.showProfile = false;
-        this.showTripCompare = true;
+        this.showTripCompare = false;
     }
     
     toggleUserProfile() {
