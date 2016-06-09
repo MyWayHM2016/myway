@@ -11,7 +11,7 @@ class HistoryCtrl {
             {
                 date: "ISSYNGEAUX - TOULOUSE (21/05/2016)",
                 distance: 372,
-                ecoScore: 8.2,
+                ecoScore: 8,
                 perso : true,
                 map : {
                     center:{latitude:44.517411,longitude:3.020660},
@@ -50,8 +50,8 @@ class HistoryCtrl {
             },
             {
                 date: "SHWERTE - DORTMUND (15/05/2016)",
-                distance: 143.970,
-                ecoScore: 6.2,
+                distance: 24.5,
+                ecoScore: 3.3,
                 map : {
                     center:{latitude:51.4790474285,longitude:7.4614436936},
                     zoom: 12,
@@ -79,7 +79,8 @@ class HistoryCtrl {
                 comfort: 4
             },
             {
-                date: "KREFELD - DORTMUND (10/05/2016)", distance: 204.8, ecoScore: 9,
+                date: "KREFELD - DORTMUND (10/05/2016)", distance: 78.2, ecoScore: 7,
+                badges: [{src: '/badges/ecodriver-17.png'}],
                 map : {
                     center:{latitude:51.4674759901,longitude:6.9000285094},
                     zoom:9
@@ -100,12 +101,12 @@ class HistoryCtrl {
                         visible: true,
                     }
                 ],
-                consommation: 9.5,
-                safety: 8,
-                comfort: 7
+                consommation: 9,
+                safety: 6,
+                comfort: 6
             },
             {
-                date: "BONN - BERGISH (09/05/2016)", distance: 404, ecoScore: 8.4,
+                date: "BONN - BERGISH (09/05/2016)", distance: 32.3, ecoScore: 7,
                 map : {
                     center: {latitude:50.9078249716,longitude:7.1435461612},
                     zoom:10
@@ -126,12 +127,12 @@ class HistoryCtrl {
                         visible: true,
                     }
                 ],
-                consommation: 7.2,
-                safety: 9.3,
-                comfort: 5
+                consommation: 7,
+                safety: 6,
+                comfort: 8
             },
             {
-                date: "COLOGNE - LEVERKUSEN (08/05/2016)", distance: 12.3, ecoScore: 4.6,
+                date: "COLOGNE - LEVERKUSEN (08/05/2016)", distance: 16.2, ecoScore: 5.6,
                 map : {
                     center: {latitude:51.0180689028,longitude:6.9772517847},
                     zoom:9
@@ -152,12 +153,12 @@ class HistoryCtrl {
                         visible: true,
                     }
                 ],
-                consommation: 2,
-                safety: 6,
-                comfort: 4
+                consommation: 5.6,
+                safety: 5.2,
+                comfort: 6
             },
             {
-                date: "AUGUSTDORF - DORTMUND (24/04/2016)", distance: 25.6, ecoScore: 6,
+                date: "AUGUSTDORF - DORTMUND (24/04/2016)", distance: 143.9, ecoScore: 6,
                 map : {
                     center: {latitude:51.6493652879,longitude:8.2733124015},
                     zoom:9,
@@ -178,9 +179,9 @@ class HistoryCtrl {
                         visible: true,
                     }
                 ],
-                consommation: 9,
-                safety: 4,
-                comfort: 7
+                consommation: 6,
+                safety: 6,
+                comfort: 6
             }
         ];
         this.setCurrentTravel(this.travels[0]);
