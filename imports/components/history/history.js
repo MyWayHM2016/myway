@@ -80,7 +80,7 @@ class HistoryCtrl {
             },
             {
                 date: "KREFELD - DORTMUND (10/05/2016)", distance: 78.2, ecoScore: 7,
-                badges: [{src: '/badges/ecodriver-17.png'}],
+                badges: [{src: '/badges/ecodriver-17 - copie.png'}],
                 map : {
                     center:{latitude:51.4674759901,longitude:6.9000285094},
                     zoom:9
